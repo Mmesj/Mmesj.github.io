@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, system-ui, Arial;
+        background: #0e050b;
+        color: #e8eef4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      header {
+        padding: 2rem 1.5rem 1rem;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .page-title {
+        font-size: clamp(2.1rem, 3vw, 3.4rem);
+        margin: 0 0 0.5rem;
+        letter-spacing: -0.03em;
+      }
+
+      .intro {
+        margin: 0;
+        color: #ffffff;
+        line-height: 1.85;
+        max-width: 40rem;
+      }
+
+      main {
+        max-width: 1080px;
+        margin: 0 auto 3rem;
+        padding: 0 1.5rem;
+      }
+
+      .year-block {
+        margin-top: 2.5rem;
+      }
+
+      .year-title {
+        font-size: 1.25rem;
+        margin: 0 0 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #ffffff;
+      }
+
+      .year-title::before {
+        content: "";
+        width: 0.35rem;
+        height: 0.35rem;
+        border-radius: 100%;
+        background: #ffffff;
+      }
+
+      .work-list {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .work-card {
+        display: block;
+        border-radius: 0.1rem;
+        overflow: hidden;
+        text-decoration: none;
+        background: linear-gradient(180deg, rgba(18, 28, 43, 0.95), rgba(8, 13, 22, 0.95));
+        border: 1px solid rgba(132, 151, 182, 0.12);
+        transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      .work-card:hover,
+      .work-card:focus-visible {
+        transform: translateY(-1px);
+        border-color: rgb(255, 255, 255);
+        box-shadow: 0 20px 60px rgb(0, 0, 0);
+      }
+
+      .thumbnail {
+        position: relative;
+        height: 180px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding: 1rem;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .work-copy {
+        padding: 1.2rem;
+      }
+
+      .work-title {
+        margin: 0 0 0.5rem;
+        font-size: 1.05rem;
+        line-height: 1.35;
+        color: #f7fbff;
+      }
+
+      .work-description {
+        margin: 0;
+        color: #b8c3d7;
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+
+      .scroll-note {
+        margin: 1rem 0 0;
+        color: #7b8ba4;
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 640px) {
+        .thumbnail {
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="page-title">Everything I Made</h1>
+      <p class="intro">This little website showcases most of my work. Even the cringy ones.</p>
+    </header>
+
+    <main id="work-feed"></main>
+
+    <script>
+      const workByYear = [
+        {
+          year: 2024,
+          items: [
+            {
+              title: "Pixel Garden App",
+              thumbnail: "linear-gradient(135deg, #4f8bf9 0%, #0f2e68 100%)",
+              description: "A small garden management app built to track planting schedules, weather, and growth progress.",
+              link: "Articles/ArticleTest.html"
+            },
+            {
+              title: "Portfolio Refresh",
+              thumbnail: "linear-gradient(135deg, #18b497 0%, #0d2b22 100%)",
+              description: "A clean portfolio overhaul that highlights projects, animation experiments, and writing samples.",
+              link: "articles/portfolio-refresh.html"
+            }
+          ]
+        },
+        {
+          year: 2023,
+          items: [
+            {
+              title: "Open Source Toolkit",
+              thumbnail: "linear-gradient(135deg, #ff9e43 0%, #6d2f01 100%)",
+              description: "A collection of utilities and components for designers and developers working on modern interfaces.",
+              link: "articles/open-source-toolkit.html"
+            },
+            {
+              title: "Gallery Story",
+              thumbnail: "linear-gradient(135deg, #8d4dff 0%, #1d1641 100%)",
+              description: "An immersive brand story and art direction project for a digital media studio.",
+              link: "articles/gallery-story.html"
+            }
+          ]
+        },
+        {
+          year: 2022,
+          items: [
+            {
+              title: "Community Report",
+              thumbnail: "linear-gradient(135deg, #f953c6 0%, #b91c6d 100%)",
+              description: "A data-rich review of community-driven design experiments and collaboration outcomes.",
+              link: "articles/community-report.html"
+            },
+            {
+              title: "Launch Campaign",
+              thumbnail: "linear-gradient(135deg, #5af4e6 0%, #044449 100%)",
+              description: "A full launch experience with motion-led visuals, messaging, and conversion-focused landing pages.",
+              link: "articles/launch-campaign.html"
+            }
+          ]
+        }
+      ];
+
+      const feed = document.getElementById('work-feed');
+
+      function createCard(item) {
+        const card = document.createElement('a');
+        card.className = 'work-card';
+        card.href = item.link;
+
+        const thumb = document.createElement('div');
+        thumb.className = 'thumbnail';
+        thumb.style.backgroundImage = item.thumbnail;
+
+        const label = document.createElement('span');
+        label.className = 'thumb-label';
+        label.textContent = item.label;
+        thumb.appendChild(label);
+
+        const copy = document.createElement('div');
+        copy.className = 'work-copy';
+
+        const title = document.createElement('h2');
+        title.className = 'work-title';
+        title.textContent = item.title;
+
+        const description = document.createElement('p');
+        description.className = 'work-description';
+        description.textContent = item.description;
+
+        copy.appendChild(title);
+        copy.appendChild(description);
+
+        card.appendChild(thumb);
+        card.appendChild(copy);
+        return card;
+      }
+
+      function renderWorkFeed() {
+        workByYear.forEach(section => {
+          const block = document.createElement('section');
+          block.className = 'year-block';
+
+          const heading = document.createElement('h2');
+          heading.className = 'year-title';
+          heading.textContent = section.year;
+
+          const list = document.createElement('div');
+          list.className = 'work-list';
+
+          section.items.forEach(item => {
+            list.appendChild(createCard(item));
+          });
+
+          block.appendChild(heading);
+          block.appendChild(list);
+          feed.appendChild(block);
+        });
+
+        const note = document.createElement('p');
+        note.className = 'scroll-note';
+        note.textContent = 'Scroll through the years and open any article to view the full project page.';
+        feed.appendChild(note);
+      }
+
+      renderWorkFeed();
+    </script>
+  </body>
+</html>
