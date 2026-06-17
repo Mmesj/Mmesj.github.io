@@ -70,7 +70,7 @@
       .work-list {
         display: grid;
         gap: 1.25rem;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
       }
 
       .work-card {
@@ -81,6 +81,8 @@
         background: linear-gradient(180deg, rgba(18, 28, 43, 0.95), rgba(8, 13, 22, 0.95));
         border: 1px solid rgba(132, 151, 182, 0.12);
         transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        max-width: 500px;
+        min-width: 180px;
       }
 
       .work-card:hover,
@@ -125,7 +127,7 @@
         font-size: 0.92rem;
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: 320px) {
         .thumbnail {
           height: 150px;
         }
@@ -138,29 +140,25 @@
       <p class="intro">This little website showcases most of my work. Even the cringy ones.</p>
     </header>
 
+    <h1>       !!!     THIS WEBSITE IS CURRENTLY UNDER CONSTRUCTION         !!!</h1>
+
     <main id="work-feed"></main>
 
     <script>
       const workByYear = [
         {
-          year: 2024,
+          year: "Currently",
           items: [
             {
               title: "Pixel Garden App",
               thumbnail: "linear-gradient(135deg, #4f8bf9 0%, #0f2e68 100%)",
               description: "A small garden management app built to track planting schedules, weather, and growth progress.",
               link: "Articles/ArticleTest.html"
-            },
-            {
-              title: "Portfolio Refresh",
-              thumbnail: "linear-gradient(135deg, #18b497 0%, #0d2b22 100%)",
-              description: "A clean portfolio overhaul that highlights projects, animation experiments, and writing samples.",
-              link: "articles/portfolio-refresh.html"
             }
           ]
         },
         {
-          year: 2023,
+          year: 2026,
           items: [
             {
               title: "Open Source Toolkit",
@@ -177,7 +175,7 @@
           ]
         },
         {
-          year: 2022,
+          year: 2025,
           items: [
             {
               title: "Community Report",
@@ -190,6 +188,72 @@
               thumbnail: "linear-gradient(135deg, #5af4e6 0%, #044449 100%)",
               description: "A full launch experience with motion-led visuals, messaging, and conversion-focused landing pages.",
               link: "articles/launch-campaign.html"
+            },
+            {
+              title: "Community Report",
+              thumbnail: "linear-gradient(135deg, #f953c6 0%, #b91c6d 100%)",
+              description: "A data-rich review of community-driven design experiments and collaboration outcomes.",
+              link: "articles/community-report.html"
+            },
+            {
+              title: "Launch Campaign",
+              thumbnail: "linear-gradient(135deg, #5af4e6 0%, #044449 100%)",
+              description: "A full launch experience with motion-led visuals, messaging, and conversion-focused landing pages.",
+              link: "articles/launch-campaign.html"
+            }
+          ]
+        },
+        {
+          year: 2024,
+          items: [
+            {
+              title: "Wet Floor Sign Boss Fight",
+              thumbnail: "Images/ssKorkuSucugu.png",
+              description: "A multiplayer hide and seek game where one player is the monster who tries to catch everyone." +
+              "While the others try to survive using various items they find.",
+              link: "articles/community-report.html"
+            },
+            {
+              title: "The Mango Game",
+              thumbnail: "Images/ssKorkuSucugu.png",
+              description: "A multiplayer deathmatch game where you propel yourself and shoot others with a MANGO gun. " +
+              "Made in ~4 days at the TÜBİTAK summer camp.",
+              link: "Articles/MangoGame.html"
+            },
+            {
+              title: "Korku Sucuğu",
+              thumbnail: "Images/ssKorkuSucugu.png",
+              description: "A multiplayer hide and seek game where one player is the monster who tries to catch everyone." +
+              "While the others try to survive using various items they find.",
+              link: "https://mesj55.itch.io/korku-sucuu"
+            },
+            {
+              title: "NoClip",
+              thumbnail: "https://img.itch.zone/aW1nLzE2Njc0NTM0LnBuZw==/315x250%23c/Gvz1bX.png",
+              description: "A platformer made in 2 days for the ScoreSpace Jam #30. The theme was float. And you can noclip through walls in the game.",
+              link: "https://mesj55.itch.io/noclip"
+            }
+          ]
+        },
+        {
+          year: 2023,
+          items: [
+            {
+              title: "Çalorant",
+              thumbnail: "Images/ssCalorant.png",
+              description: "A miserable attempt to make a Counter Strike clone. The name comes from \"Çal-\"(to steal) and Valorant.",
+              link: "https://drive.google.com/drive/folders/1Cgp438Kd1SGOP8b45I3VVrGSWdTJW3MB?usp=sharing"
+            }
+          ]
+        },
+        {
+          year: "Ancient Times",
+          items: [
+            {
+              title: "My Scratch",
+              thumbnail: "https://cdn2.scratch.mit.edu/get_image/project/781659319_100x80.png",
+              description: "My old Scratch projects. About 10 of them. I appreciate the effort but they're not pretty good.",
+              link: "https://scratch.mit.edu/users/SmS55tr/"
             }
           ]
         }
@@ -204,7 +268,7 @@
 
         const thumb = document.createElement('div');
         thumb.className = 'thumbnail';
-        thumb.style.backgroundImage = item.thumbnail;
+        thumb.style.backgroundImage = `url("${item.thumbnail}")`;
 
         const label = document.createElement('span');
         label.className = 'thumb-label';

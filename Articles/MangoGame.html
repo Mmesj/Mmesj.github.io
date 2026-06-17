@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, system-ui, Arial;
+        background: #0e050b;
+        color: #e8eef4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      header {
+        padding: 2rem 1.5rem 1rem;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .page-title {
+        font-size: clamp(2.1rem, 3vw, 3.4rem);
+        margin: 0 0 0.5rem;
+        letter-spacing: -0.03em;
+      }
+
+      .intro {
+        margin: 0;
+        color: #ffffff;
+        line-height: 1.85;
+        max-width: 40rem;
+      }
+
+      main {
+        max-width: 1080px;
+        margin: 0 auto 3rem;
+        padding: 0 1.5rem;
+      }
+
+      .year-block {
+        margin-top: 2.5rem;
+      }
+
+      .year-title {
+        font-size: 1.25rem;
+        margin: 0 0 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #ffffff;
+      }
+
+      .year-title::before {
+        content: "";
+        width: 0.35rem;
+        height: 0.35rem;
+        border-radius: 100%;
+        background: #ffffff;
+      }
+
+      .work-list {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      }
+
+      .work-card {
+        display: block;
+        border-radius: 0.1rem;
+        overflow: hidden;
+        text-decoration: none;
+        background: linear-gradient(180deg, rgba(18, 28, 43, 0.95), rgba(8, 13, 22, 0.95));
+        border: 1px solid rgba(132, 151, 182, 0.12);
+        transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        max-width: 500px;
+        min-width: 180px;
+      }
+
+      .work-card:hover,
+      .work-card:focus-visible {
+        transform: translateY(-1px);
+        border-color: rgb(255, 255, 255);
+        box-shadow: 0 20px 60px rgb(0, 0, 0);
+      }
+
+      .thumbnail {
+        position: relative;
+        height: 180px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding: 1rem;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .work-copy {
+        padding: 1.2rem;
+      }
+
+      .work-title {
+        margin: 0 0 0.5rem;
+        font-size: 1.05rem;
+        line-height: 1.35;
+        color: #f7fbff;
+      }
+
+      .work-description {
+        margin: 0;
+        color: #b8c3d7;
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+
+      .scroll-note {
+        margin: 1rem 0 0;
+        color: #7b8ba4;
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 320px) {
+        .thumbnail {
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="page-title">Everything I Made</h1>
+      <p class="intro">This little website showcases most of my work. Even the cringy ones.</p>
+    </header>
+
+
+Original Linux Version: https://drive.google.com/drive/folders/1MY97IJdpKBjNGNDB1jAh0oyF8RRNVyxn?usp=sharing
+Windows Version: https://drive.google.com/drive/folders/1ortZEYjNw5Kb1N2FJgnbVAbSe7_nfpR0?usp=sharing
+  </body>
+</html>
