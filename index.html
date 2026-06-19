@@ -140,8 +140,6 @@
       <p class="intro">This little website showcases most of my work. Even the cringy ones.</p>
     </header>
 
-    <h1>       !!!     THIS WEBSITE IS CURRENTLY UNDER CONSTRUCTION         !!!</h1>
-
     <main id="work-feed"></main>
 
     <script>
@@ -150,10 +148,10 @@
           year: "Currently",
           items: [
             {
-              title: "Pixel Garden App",
-              thumbnail: "linear-gradient(135deg, #4f8bf9 0%, #0f2e68 100%)",
-              description: "A small garden management app built to track planting schedules, weather, and growth progress.",
-              link: "Articles/ArticleTest.html"
+              title: "Telekill",
+              thumbnail: "Images/ssTelekill.png",
+              description: "The game im currently working on. A one-hit-kill 2D action platformer. Kind of a mix of Hotline Miami and Katana ZERO",
+              link: "Articles/Telekill.html"
             }
           ]
         },
@@ -161,16 +159,16 @@
           year: 2026,
           items: [
             {
-              title: "Open Source Toolkit",
-              thumbnail: "linear-gradient(135deg, #ff9e43 0%, #6d2f01 100%)",
-              description: "A collection of utilities and components for designers and developers working on modern interfaces.",
-              link: "articles/open-source-toolkit.html"
+              title: "Topdown Rogulike Demo",
+              thumbnail: "Images/ssHades3.png",
+              description: "A topdown roguelike demo inspired by Hades. Made in ~2 weeks.",
+              link: "https://drive.google.com/drive/folders/1TgiT7IFuS9zeQTMbataxxUs3lhdTdcxF?usp=drive_link"
             },
             {
-              title: "Gallery Story",
-              thumbnail: "linear-gradient(135deg, #8d4dff 0%, #1d1641 100%)",
-              description: "An immersive brand story and art direction project for a digital media studio.",
-              link: "articles/gallery-story.html"
+              title: "Artemis Links",
+              thumbnail: "Images/ssArtemisLinks.png",
+              description: "A collection of links to use in computer class. Made in a day.",
+              link: "https://artemislinks.netlify.app"
             }
           ]
         },
@@ -178,28 +176,28 @@
           year: 2025,
           items: [
             {
-              title: "Community Report",
-              thumbnail: "linear-gradient(135deg, #f953c6 0%, #b91c6d 100%)",
-              description: "A data-rich review of community-driven design experiments and collaboration outcomes.",
-              link: "articles/community-report.html"
+              title: "Noobcraft",
+              thumbnail: "https://img.itch.zone/aW1nLzE2NTU0MjIxLnBuZw==/315x250%23c/wDqczl.png",
+              description: "My first multiplayer game that started off as something simple in 2023 and became a (kinda) original mobile battle royale game and is actually fun.",
+              link: "https://mesj55.itch.io/noobcraft"
             },
             {
-              title: "Launch Campaign",
-              thumbnail: "linear-gradient(135deg, #5af4e6 0%, #044449 100%)",
-              description: "A full launch experience with motion-led visuals, messaging, and conversion-focused landing pages.",
-              link: "articles/launch-campaign.html"
+              title: "Malorant",
+              thumbnail: "Articles/Images/imageMalorant1.png",
+              description: "Another attempt to make a Counter Strike clone. This time with 2 additional years of experience I managed to pull of something decent. Made in ~10 days. Also multiplayer using Steam.",
+              link: "Articles/Malorant.html"
             },
             {
-              title: "Community Report",
-              thumbnail: "linear-gradient(135deg, #f953c6 0%, #b91c6d 100%)",
-              description: "A data-rich review of community-driven design experiments and collaboration outcomes.",
-              link: "articles/community-report.html"
+              title: "Shotgun Roulette",
+              thumbnail: "Images/ssShotgunRoulette.png",
+              description: "A buckshot roulette clone playable on a single device with up to 4 players. Made in 3 days.",
+              link: "https://mesj55.itch.io/shotgunroulette"
             },
             {
-              title: "Launch Campaign",
-              thumbnail: "linear-gradient(135deg, #5af4e6 0%, #044449 100%)",
-              description: "A full launch experience with motion-led visuals, messaging, and conversion-focused landing pages.",
-              link: "articles/launch-campaign.html"
+              title: "Blender Stuff",
+              thumbnail: "Images/ssModelShowcase.png",
+              description: "Some basic stuff i did with blender and a showcase of my first decent 3D model.",
+              link: "Articles/BlenderStuff.html"
             }
           ]
         },
@@ -208,14 +206,14 @@
           items: [
             {
               title: "Wet Floor Sign Boss Fight",
-              thumbnail: "Images/ssKorkuSucugu.png",
-              description: "A multiplayer hide and seek game where one player is the monster who tries to catch everyone." +
-              "While the others try to survive using various items they find.",
-              link: "articles/community-report.html"
+              thumbnail: "Images/ssSlip.png",
+              description: "I think the title is descriptive enough. " +
+              "Made in a day.",
+              link: "https://mesj55.itch.io/slip"
             },
             {
               title: "The Mango Game",
-              thumbnail: "Images/ssKorkuSucugu.png",
+              thumbnail: "Articles/Images/imageMango1.png",
               description: "A multiplayer deathmatch game where you propel yourself and shoot others with a MANGO gun. " +
               "Made in ~4 days at the TÜBİTAK summer camp.",
               link: "Articles/MangoGame.html"
@@ -317,7 +315,7 @@
 
         const note = document.createElement('p');
         note.className = 'scroll-note';
-        note.textContent = 'Scroll through the years and open any article to view the full project page.';
+        note.innerHTML = 'btw you should probably <a href=https://politeandgood.com>read this</a>';
         feed.appendChild(note);
       }
 
